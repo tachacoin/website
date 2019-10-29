@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Tachacoin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Tachacoin</h1>
+						<p>How to run Tachacoin wallet</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/pic04.png" alt="" /></span>
+								<h2>Introduction to Tacacoin</h2>
+<p>Tachacoin is a cryptocurrency that was folked from Bitcoin and Quantum coin which combines ethereum’s smart contract functionality with bitcoin’s security to create a coin that is suitable for adoption by businesses and ecommerce provided.<br>
+Tacha is a cryptocurrency platform that enables decentralized applications (dApps) and smart contracts to be developed and utilized. DApps work on mobile devices, and is compatible with most major blockchain ecosystems. We use our own Decentralized Governance Protocol (DGP) that enables blockchain setting modification through the use of smart contracts
+ </p>
+<p>
+Tachacoin is an open-sourced platform that merges Ethereum’s smart contract network with Bitcoin’s value transfer protocol. Its a fork of the QUANTUM coin. Tachacoin has an advantage in that it forked Bitcoin’s code to be compatible with Ethereum. Tachacoin benefits from the development community created for both, and application layers like the Lightning Network and Raiden Network can more easily be adapted. Tacha also uses an x85 Virtual Machine (VM) that supports a variety of development languages.
+Bitcoin and Ethereum are the highest-profile blockchain projects, Tacha took a very smart development shortcut for rapid, iterative improvements.
+Tachacoin blockchain uses  PoS smart contracts, the major reason is that PoS is more energy efficient to mine cryptocurrency and provides a sleeker consensus at the expense of decentralization. This is how Tachacoin will be able to focus on mobile-first applications. <br>
+
+<h2 style="color: red">Decentralized Applications</h2>
+With tachacoin, we enable enterprises to develop decentralized applications (DApp), using bitcoin technology to store transactions in each user's system, all transactions must be verified, and after verification there is no way to change them without alerting each user of the chain.
+</p>
+
+<h1 style="color: red"> Creating A TRC20 Token</h1>
+<p>TRC20 is the implementation of a standard API for tokens within smart contracts on Tachacoin，basically it is the same as QRC20 and the ERC20</p>
+<h3 style="color: red">Deployment Of TR20Token</h3>
+<p>
+<ul>
+<li style="color:red" >Download the latest Tachacoin from  <a href="https://tachacoin.tech/index.html#downloads">TACHACOIN WEBSITE</a> or https://github.com/tachacoin/tachacoin/releases/latest.</li>
+<li style="color: red">Open the wallet and allow it to synic. Make sure you have TACHA in your wallet to pay for gas
+<b style="color: green">Click Request payment to get your receive address</b>.
+								<span class="image main"><img src="images/receive.png" alt="" /></span>
+<li style="color: green">Go to <a href="https://ethereum.github.io/browser-solidity/#optimize=false&version=soljson-v0.4.26+commit.4563c3fc.js">https://ethereum.github.io/browser-solidity/#optimize=false&version=soljson-v0.4.26+commit.4563c3fc.js</a> and delete the .sol file and recreate another one .</li>
+								<span class="image main"><img src="images/tr20.png" alt="" /></span>
+<p>From the above website, Click the “+” button on the top-right side，create new files SafeMath.sol and TRC20Token.sol, copy & paste you code heer. Then you have to Click <b style="color: red">details</b> on the right side, copy the save BYTECODE。
+								<span class="image main"><img src="images/bytecode.png" alt="" /></span>
+</p>
+ </li>
+<h3 style="color: red">Create Contract</h3>
+<p>Open your Tachacoin wallet, and then go to where you have <b style="color: red">SMART CONTRACT</b>, click on create</p>
+<li>Click “Create Contract” button, save the SenderAddress and ContractAddress </li>
+<li><b>Wait some time until the transaction get confirmed, and the contract is created successfully.</b></li>
+
+<h2 style="color: red">Add token In Tachacoin Wallet</h2>
+<p>Run the tachacoin wallet and go to “TRC Token” page and click “Add Token” button, input your SenderAddress, and choose SenderAddress as your Token Address, click “Confirm” button to get this done.</p>
+
+<h2 style="color: red">Receive and send tokens</h2>
+<p>From your tachacoin wallet click to choose your token, click the “Send” and “Receive” button to receive and send tokens</p>
+</ul>
+
+	<h2 style="color: red">CHECK OTHERS</h2>
+<ul class="accordion"> <h2>TRC20 Integration Technical Guide</h2></ul>
+<div class="panel">
+<h1>Introduction</h1>
+<p>Exchanges should use one main address to store tokens for all users. Below MAIN_QRC_ADDRESS is the main address.
+
+The address of the QRC20 token contract is TOKEN_CONTRACT_ADDRESS.</p>
+<li>gas limit is DEFAULT_GAS_LIMIT, recommended value is 250000</li>
+<li>gas price is DEFAULT_GAS_PRICE，recommended value is 0.00000040</li>
+<p>TOKEN_DECIMALS is the decimals of the token, which varies per token. Here we set it 8.</p>
+<h2>Running The Tachacoin</h2>
+<p>First enable the indexing service when starting tachacoind, using the flags -logevents -txindex.</p>
+
+<h2>Getting Token Balance</h2>
+<li>$userAddress is the deposit address</li>
+<code>tachacoin-cli callcontract \
+    {TOKEN_CONTRACT_ADDRESS} \
+    70a08231{to32bytesArg(addressToHash160($userAddress))}
+
+ </code>
+ <p>In the JSON output look for executionResult.output. This is the token balance.</p>
+<h2>Withdraw</h2>
+<li>$userAddress is the withdraw address</li>
+<li>$amount the withdraw amount in unit token</li>
+<code>
+tachacoin-cli sendtocontract \
+    {TOKEN_CONTRACT_ADDRESS} \
+    a9059cbb{to32bytesArg(addressToHash160($userAddress))}{to32bytesArg(addDecimals($amount)) \
+    0 \
+    {DEFAULT_GAS_LIMIT} \
+    {DEFAULT_GAS_PRICE} \
+    {MAIN_QRC_ADDRESS}
+    </code>
+    <p>The above returns the txid of this transaction.</p>
+    <h2>Deposit and Witdraw Logs</h2>
+    <li>$startingBlock is where you want to start looking </li>
+    <code>
+    tachacoin-cli searchlogs \
+    STARTING_BLOCK \
+    999999999 \
+    '{ "addresses": ["TOKEN_CONTRACT_ADDRESS"]}' \
+    '{"topics": ["ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}'
+    </code>
+
+<h2 style="color: red">Checking Confirmations</h2>
+<p>Given a transaction id $txid:</p>
+<code>
+tachacoin-cli gettransaction $txid
+</code>
+</div>
+<ul class="accordion"><h2> How To Run The Tachacoin Wallet</h2></ul>
+<div class="panel">
+  <p>Tachacoin is built for the following platform- Ubuntu, Window, ARM32, MacOSX_Mojave</p>
+  <h2 style="color: red">UBUNTU</h2>
+  <p>For the GUI, go to the directory where you have the wallet downloaded into and open a terminal in that folder and type in
+   <code>
+   ./tachacoin-qt
+   </code></p>
+   <p>
+   	<a href="http://i.imgur.com/l0A47jo.png">
+  <img src="http://imgur.com/l0A47jol.png" />
+</a>
+<br>
+From the above wallet, you can see the following
+<li style="color: green">My Wallet: It shows your wallet balances, other tokens, recent transactions, and show more</li> 
+<li style="color: green">Send: this will show you Payto:, Label, Amount, Add Receipts, Transaction Fee, Send and Clear</li> 
+<a href="http://i.imgur.com/BLNmAdG.png">
+  <img src="http://imgur.com/BLNmAdGl.png" />
+</a>
+
+<li style="color: green">Receive</li>
+<a href="http://i.imgur.com/jHjERVr.png">
+  <img src="http://imgur.com/jHjERVrl.png" />
+</a> 
+<li style="color: green">Transactions</li> 
+<a href="http://i.imgur.com/hWLDPqT.png">
+  <img src="http://imgur.com/hWLDPqTl.png" />
+</a>
+<li style="color: green">Smart Contracts</li> 
+<a href="http://i.imgur.com/3s1LMwF.png">
+  <img src="http://imgur.com/3s1LMwFl.png" />
+</a>
+<li style="color: green">TRC Tokens</li> 
+<a href="http://i.imgur.com/cOM361i.png">
+  <img src="http://imgur.com/cOM361il.png" />
+</a>
+   </p>
+   <h2 style="color: red">Tachacoin Window Wallet</h2>
+   <p>Download the window wallet from <a href="https://github.com/tachacoin/tachacoin/releases/tag/v0.18.1">Tachacoin Github</a> or <a href="https://tachacoin.tech">Tachacoin Website</a>, you can also  download the tachacoin window installer to install the tachacoin wallet automatically for you. Once its install, you can then open the wallet and its illustration is similar with that of UBUNTU once its opened</p>
+   <h2 style="color: red">Tachacoin MACOS Wallet</h2>
+   <p>For MacOS, download the wallet from <a href="https://github.com/tachacoin/tachacoin/releases/tag/v0.18.1">Tachacoin Github</a> or <a href="https://tachacoin.tech">Tachacoin Website</a>, then run the wallet. All running wallet is same as the illustration from the UBUNTU wallet</p>
+</div>
+<ul class="accordion"><h2>How To Stake Tachacoin</h2></ul>
+<div class="panel">
+  <p>Launch the tachacoin daemon, if your wallet is encrypted, open with 
+  <br> 
+  <code>
+  	tachacoin-cli walletpassphrase password 999999999 true
+  </code> 
+  <br>
+  for example <br>
+  <code>
+  	  	tachacoin-cli walletpassphrase Ytw1r2eg3v4db5hh6yy7gf8s9RE2Ts 999999999 true
+  </code>
+  </p>
+  <p>Once unlocked,  if you have TACHA, wait until we have more than 501 confirmations if you just receive it to enable us for staking.
+<br>
+once its confirmed check your wallet to see if its staking with 
+<br>
+<code>
+ ./tachacoin-cli getstakinginfo
+ </code>
+ <br>
+ <code>
+ {
+  "enabled": true, <br>
+  "staking": false, <br>
+  "errors": "", <br>
+  "pooledtx": 0, <br>
+  "difficulty": 19159969.51398449, <br>
+  "search-interval": 0, <br>
+  "weight": 0, <br>
+  "netstakeweight": 8206248895088427, <br>
+  "expectedtime": 0
+}
+</code>
+  </p>
+
+</div>
+
+
+
+
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Terms and conditions</h2>
+							<p>Use tachacoin for legitimate purposes and any illegitimate use of tachacoin, the user will be held liable for such crime</p>
+
+						</section>
+						<section>
+							<h2>Contacts</h2>
+							<dl class="alt">
+							</dl>
+							<ul class="icons">
+								<li><a href="https://twitter.com/tachacoin" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="https://facebook.com/tachacoin" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+								<li><a href="https://instagram.com/tachacoin" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/tachacoin/tachacoin" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+
+							</ul>
+						</section>
+						<p class="copyright">&copy; 2019 Diazcoin : <a href="https://tachacoin.tech">Tachacoin Online</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+	</body>
+</html>
